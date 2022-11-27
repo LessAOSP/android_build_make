@@ -259,6 +259,24 @@ class EdifyGenerator(object):
     """Log a message to the screen (if the logs are visible)."""
     self.script.append('ui_print("%s");' % (message,))
 
+  def PrintLessAOSPBanner(self, android_version, build_id, build_date,
+                                  security_patch, device):
+
+    self.Print("----------------------------------------------")
+    self.Print(" __          _ _ _ _ _   _ _ _ __   _ _ _ __  ")
+    self.Print("|  |        |   _ _   | |   _ _ _| |   ___  | ")
+    self.Print("|  |   By   |  |   |  | |  |_ _ _  |  |___| | ")
+    self.Print("|  |Aghora7 |  |   |  | |_ _ _   | |   _ _ _| ")
+    self.Print("|  |______  |  |_ _|  |  _ _ _|  | |  |       ")
+    self.Print("|_ _ _ _ _| |_ _ _ _ _| |_ _ _ __| |__|       ")
+    self.Print("----------------------------------------------")
+    self.Print(" Android Version: %s"%(android_version));
+    self.Print(" Build ID: %s"%(build_id));
+    self.Print(" Build Time: %s"%(build_date));
+    self.Print(" Security Patch: %s"%(security_patch));
+    self.Print(" Device: %s"%(device))
+    self.Print("----------------------------------------------")
+
   def TunePartition(self, partition, *options):
     fstab = self.fstab
     if fstab:
